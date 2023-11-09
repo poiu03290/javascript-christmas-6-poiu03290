@@ -1,5 +1,9 @@
+import InputView from './InputView.js';
+
 class App {
-  async run() {}
+  async run() {
+    await InputView.readMenu();
+  }
 }
 
 export default App;
