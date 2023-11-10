@@ -23,7 +23,7 @@ class App {
     OutputView.print("PRESENTATION");
     const benefit = new Benefit(date);
     const presentation = benefit.isPresentation(totalPrice);
-    OutputView.singlePrint(presentation, 'string');
+    OutputView.singlePrint(presentation);
 
     OutputView.print("BENEFIT_LIST");
     const benefitList = benefit.getBenefitList(orderedList, presentation);
@@ -36,6 +36,10 @@ class App {
     OutputView.print("EXPECTATION_PRICE");
     const expectationPrice = menu.getExpectationPrice(totalPrice, totalBenefitPrice);
     OutputView.singlePrint(expectationPrice, 'price');
+
+    OutputView.print("BADGE");
+    const badge = benefit.getBadge(totalBenefitPrice);
+    OutputView.singlePrint(badge);
   }
 }
 

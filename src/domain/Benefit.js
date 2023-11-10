@@ -20,6 +20,18 @@ class Benefit {
         return temp;
     }
 
+    getBadge(price) {
+        if(5000 <= price && price < 10000) {
+            return '별';
+        }
+        if(10000 <= price && price < 20000) {
+            return '트리';
+        }
+        if(20000 < price) {
+            return '산타';
+        }
+    }
+
     getTotalBenefitPrice(benefitList) {
         return benefitList.reduce((acc, cur) => {
             return acc += cur.benefit
