@@ -1,5 +1,9 @@
+import OutputView from '../View/OutputView.js';
+
 class Menu {
-    constructor() {}
+    constructor(menu) {
+        this.menu = menu;
+    }
 
     static modifyObj(input) {
         const obj = {};
@@ -11,6 +15,10 @@ class Menu {
         });
 
         return obj;
+    }
+
+    getMenuList() {
+        OutputView.listPrint(this.menu, 'menu');
     }
 }
 
