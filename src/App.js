@@ -22,7 +22,7 @@ class App {
 
     OutputView.print("PRESENTATION");
     const benefit = new Benefit(date);
-    const presentation = benefit.presentation(totalPrice);
+    const presentation = benefit.isPresentation(totalPrice);
     OutputView.singlePrint(presentation, 'string');
 
     OutputView.print("BENEFIT_LIST");

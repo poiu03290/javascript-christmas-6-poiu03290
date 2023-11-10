@@ -6,7 +6,7 @@ class Benefit {
         this.obj = {};
     }
 
-    presentation(price) {
+    isPresentation(price) {
         if(+price >= 120000) {
             return "샴페인 1개"
         }
@@ -20,13 +20,13 @@ class Benefit {
         return temp;
     }
 
-    getBenefitList(orderedList, event) {
+    getBenefitList(orderedList, presentation) {
         let list = [];
         const christmas = this.#christmas();
         const weekend = this.#weekend(orderedList);
         const weekday = this.#weekday(orderedList);
         const special = this.#special();
-        const presentation = this.#presentation(event);
+        const presentation = this.#presentation(presentation);
 
         list.push(christmas, weekend, weekday, special, presentation);
         const benefitList = list.filter(v => v.benefit !== 0);
@@ -82,8 +82,8 @@ class Benefit {
     }
 
 
-    #presentation(presentation) {
-        const benefit = presentation === undefined ? 0 : 25000;
+    #presentation(data) {
+        const benefit = data === undefined ? 0 : 25000;
 
         const result = this.#modifyObj('증정 이벤트', benefit);
         return result;
