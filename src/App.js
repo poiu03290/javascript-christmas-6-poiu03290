@@ -20,9 +20,13 @@ class App {
     OutputView.singlePrint(totalPrice, 'price');
 
     OutputView.print("PRESENTATION");
-    const benefit = new Benefit();
+    const benefit = new Benefit(date);
     const presentation = benefit.presentation(totalPrice);
     OutputView.singlePrint(presentation, 'string');
+
+    OutputView.print("BENEFIT_LIST");
+    const benefitList = benefit.getBenefitList();
+    console.log(benefitList);
   }
 }
 

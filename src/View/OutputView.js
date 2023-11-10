@@ -11,12 +11,15 @@ const OutputView = {
     },
 
     listPrint(list, type) {
+        if(list.length === 0) {
+            Console.print('없음');
+        }
         for(const [key, value] of Object.entries(list)){
             if(type === 'menu') {
                 Console.print(`${key} ${value}개`);
             } 
             if(type === 'benefit') {
-                Console.print(`${key}: ${value.toLocaleString()}원`);
+                Console.print(`${key}: -${value.toLocaleString()}원`);
             }
         };
     },
