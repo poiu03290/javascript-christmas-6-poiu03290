@@ -14,14 +14,14 @@ const OutputView = {
         if(list.length === 0) {
             Console.print('없음');
         }
-        for(const [key, value] of Object.entries(list)){
+        list.forEach(el => {
             if(type === 'menu') {
-                Console.print(`${key} ${value}개`);
-            } 
-            if(type === 'benefit') {
-                Console.print(`${key}: -${value.toLocaleString()}원`);
+                Console.print(`${el.name} ${el.count}개`);
             }
-        };
+            if(type === 'benefit') {
+                Console.print(`${el.name}: ${el.benefit.toLocaleString()}원`)
+            }
+        })
     },
 
     singlePrint(data, type) {

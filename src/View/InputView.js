@@ -12,9 +12,8 @@ const InputView = {
 
     async readMenu() {
         const input = await Console.readLineAsync(INPUT_MESSAGE.MENU);
-        const MenuList = Menu.modifyObj(input);
         
-        return MenuList;
+        return input;
     }
 }
 

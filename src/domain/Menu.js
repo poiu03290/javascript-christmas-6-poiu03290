@@ -1,9 +1,7 @@
 import ALL_MENU from '../data/menu.js';
 
 class Menu {
-    constructor(menu) {
-        this.menu = menu;
-    }
+    constructor() {}
 
     static modifyObj(input) {
         const obj = {};
@@ -17,9 +15,10 @@ class Menu {
         return obj;
     }
 
-    getOrderedList() {
+    getOrderedList(input) {
+        const menuList = Menu.modifyObj(input);
         let orderedList = [];
-        for(const [orderedMenu, count] of Object.entries(this.menu)) {
+        for(const [orderedMenu, count] of Object.entries(menuList)) {
             const finedMenu = ALL_MENU.find(menu => menu.name === orderedMenu);
             finedMenu['count'] = +count;
             orderedList.push(finedMenu);
@@ -28,8 +27,7 @@ class Menu {
         return orderedList;
     }
 
-    getTotalPrice() {
-        const orderedList = this.getOrderedList();
+    getTotalPrice(orderedList) {
         return orderedList.reduce((acc, cur) => {
             acc += cur.price * cur.count;
 

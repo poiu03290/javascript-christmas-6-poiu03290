@@ -8,15 +8,16 @@ class App {
   async run() {
     OutputView.print("WELCOME");
     const date = await InputView.readDate();
-    const menuList = await InputView.readMenu();
+    const input = await InputView.readMenu();
     OutputView.print(+date);
 
-    const menu = new Menu(menuList);
+    const menu = new Menu();
+    const orderedList = menu.getOrderedList(input);
     OutputView.print("MENU");
-    OutputView.listPrint(menuList, 'menu');
+    OutputView.listPrint(orderedList, 'menu');
 
     OutputView.print("TOTAL_PRICE");
-    const totalPrice = menu.getTotalPrice();
+    const totalPrice = menu.getTotalPrice(orderedList);
     OutputView.singlePrint(totalPrice, 'price');
 
     OutputView.print("PRESENTATION");
