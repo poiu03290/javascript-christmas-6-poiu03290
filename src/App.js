@@ -12,7 +12,11 @@ class App {
 
     const menu = new Menu(menuList);
     OutputView.print("MENU");
-    menu.getMenuList();
+    OutputView.listPrint(menuList, 'menu');
+
+    OutputView.print("TOTAL_PRICE");
+    const totalPrice = menu.getTotalPrice();
+    OutputView.singlePrint(totalPrice, 'price');
   }
 }
 

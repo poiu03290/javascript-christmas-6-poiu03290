@@ -19,7 +19,13 @@ const OutputView = {
                 Console.print(`${key}: ${value.toLocaleString()}원`);
             }
         };
-    }
+    },
+
+    singlePrint(data, type) {
+        if(type === 'price') {
+            Console.print(`${data.toLocaleString()}원`);
+        }
+    },
 }
 
 export default OutputView;

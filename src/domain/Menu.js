@@ -1,5 +1,7 @@
 import OutputView from '../View/OutputView.js';
 
+import ALL_MENU from '../data/menu.js';
+
 class Menu {
     constructor(menu) {
         this.menu = menu;
@@ -7,9 +9,9 @@ class Menu {
 
     static modifyObj(input) {
         const obj = {};
-        const ordredMenu = input.split(',');
+        const splitedMenu = input.split(',');
 
-        ordredMenu.map(menu => {
+        splitedMenu.map(menu => {
             const split = menu.split('-');
             obj[split[0]] = split[1];
         });
@@ -17,8 +19,24 @@ class Menu {
         return obj;
     }
 
-    getMenuList() {
-        OutputView.listPrint(this.menu, 'menu');
+    getOrderedList() {
+        let orderedList = [];
+        for(const [orderedMenu, count] of Object.entries(this.menu)) {
+            const finedMenu = ALL_MENU.find(menu => menu.name === orderedMenu);
+            finedMenu['count'] = +count;
+            orderedList.push(finedMenu);
+        }
+
+        return orderedList;
+    }
+
+    getTotalPrice() {
+        const orderedList = this.getOrderedList();
+        return orderedList.reduce((acc, cur) => {
+            acc += cur.price * cur.count;
+
+            return acc;
+        }, 0)
     }
 }
 
