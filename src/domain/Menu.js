@@ -1,5 +1,3 @@
-import OutputView from '../View/OutputView.js';
-
 import ALL_MENU from '../data/menu.js';
 
 class Menu {

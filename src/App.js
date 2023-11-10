@@ -2,6 +2,7 @@ import InputView from './View/InputView.js';
 import OutputView from './View/OutputView.js';
 
 import Menu from './domain/Menu.js';
+import Benefit from './domain/Benefit.js';
 
 class App {
   async run() {
@@ -17,6 +18,11 @@ class App {
     OutputView.print("TOTAL_PRICE");
     const totalPrice = menu.getTotalPrice();
     OutputView.singlePrint(totalPrice, 'price');
+
+    OutputView.print("PRESENTATION");
+    const benefit = new Benefit();
+    const presentation = benefit.presentation(totalPrice);
+    OutputView.singlePrint(presentation, 'string');
   }
 }
 

@@ -23,8 +23,9 @@ const OutputView = {
 
     singlePrint(data, type) {
         if(type === 'price') {
-            Console.print(`${data.toLocaleString()}원`);
+            return Console.print(`${data.toLocaleString()}원`);
         }
+        return Console.print(data);
     },
 }
 
