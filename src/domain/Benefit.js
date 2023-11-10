@@ -20,6 +20,12 @@ class Benefit {
         return temp;
     }
 
+    getTotalBenefitPrice(benefitList) {
+        return benefitList.reduce((acc, cur) => {
+            return acc += cur.benefit
+        }, 0)
+    }
+
     getBenefitList(orderedList, presentation) {
         let list = [];
         const christmas = this.#christmas();

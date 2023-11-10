@@ -28,6 +28,9 @@ const OutputView = {
         if(type === 'price') {
             return Console.print(`${data.toLocaleString()}원`);
         }
+        if(type === 'benefit') {
+            return Console.print(`-${data.toLocaleString()}원`);
+        }
         return Console.print(data ?? "없음");
     },
 }

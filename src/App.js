@@ -28,6 +28,10 @@ class App {
     OutputView.print("BENEFIT_LIST");
     const benefitList = benefit.getBenefitList(orderedList, presentation);
     OutputView.listPrint(benefitList, 'benefit');
+
+    OutputView.print("BENEFIT_PRICE");
+    const totalBenefitPrice = benefit.getTotalBenefitPrice(benefitList);
+    OutputView.singlePrint(totalBenefitPrice, 'benefit');
   }
 }
 
