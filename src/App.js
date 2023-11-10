@@ -32,6 +32,10 @@ class App {
     OutputView.print("BENEFIT_PRICE");
     const totalBenefitPrice = benefit.getTotalBenefitPrice(benefitList);
     OutputView.singlePrint(totalBenefitPrice, 'benefit');
+
+    OutputView.print("EXPECTATION_PRICE");
+    const expectationPrice = menu.getExpectationPrice(totalPrice, totalBenefitPrice);
+    OutputView.singlePrint(expectationPrice, 'price');
   }
 }
 

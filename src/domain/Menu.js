@@ -34,6 +34,11 @@ class Menu {
             return acc;
         }, 0)
     }
+
+    getExpectationPrice(totalPrice, totalBenefitPrice) {
+        const event = totalPrice >= 120000 ? 25000 : 0;
+        return totalPrice - totalBenefitPrice + event;
+    }
 }
 
 export default Menu;
