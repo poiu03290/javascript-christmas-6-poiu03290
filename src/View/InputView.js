@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import Menu from '../domain/Menu.js';
+import Menu from '../Domain/Menu.js';
 
 import { INPUT_MESSAGE } from '../data/message.js';
 
