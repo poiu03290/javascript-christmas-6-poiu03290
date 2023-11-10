@@ -18,7 +18,9 @@ class Benefit {
         let list = [];
         const christmas = this.#christmas();
         const weekend = this.#weekend(orderedList);
-        console.log(christmas)
+        const weekday = this.#weekday(orderedList);
+        console.log("주말 할인:", weekend);
+        console.log("평일 할인:", weekday);
 
         return list;
     }
@@ -34,9 +36,25 @@ class Benefit {
 
     #weekend(orderedList) {
         let benefit = 0;
-        const filtered = orderedList.filter(menu => menu.type === 'main')
+        const filtered = orderedList
+            .filter(menu => menu.type === 'main')
+            .reduce((acc, cur) => acc + cur.count, 0);
+            
         if(WEEKEND.includes(this.date)) {
-            benefit = filtered.length * 2023;
+            benefit = filtered * 2023;
+        }
+        
+        return benefit;
+    }
+
+    #weekday(orderedList) {
+        let benefit = 0;
+        const filtered = orderedList
+            .filter(menu => menu.type === 'dessert')
+            .reduce((acc, cur) => acc + cur.count, 0);
+            
+        if(!WEEKEND.includes(this.date)) {
+            benefit = filtered * 2023;
         }
         
         return benefit;
