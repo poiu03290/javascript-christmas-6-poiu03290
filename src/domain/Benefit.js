@@ -26,9 +26,9 @@ class Benefit {
         const weekend = this.#weekend(orderedList);
         const weekday = this.#weekday(orderedList);
         const special = this.#special();
-        const presentation = this.#presentation(presentation);
+        const event = this.#presentation(presentation);
 
-        list.push(christmas, weekend, weekday, special, presentation);
+        list.push(christmas, weekend, weekday, special, event);
         const benefitList = list.filter(v => v.benefit !== 0);
         return benefitList;
     }
