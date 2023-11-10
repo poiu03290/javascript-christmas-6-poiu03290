@@ -1,4 +1,4 @@
-import { WEEKEND } from '../data/date.js';
+import { WEEKEND, SPECIAL } from '../data/date.js';
 
 class Benefit {
     constructor(date) {
@@ -19,8 +19,7 @@ class Benefit {
         const christmas = this.#christmas();
         const weekend = this.#weekend(orderedList);
         const weekday = this.#weekday(orderedList);
-        console.log("주말 할인:", weekend);
-        console.log("평일 할인:", weekday);
+        const special = this.#special();
 
         return list;
     }
@@ -52,9 +51,18 @@ class Benefit {
         const filtered = orderedList
             .filter(menu => menu.type === 'dessert')
             .reduce((acc, cur) => acc + cur.count, 0);
-            
+
         if(!WEEKEND.includes(this.date)) {
             benefit = filtered * 2023;
+        }
+        
+        return benefit;
+    }
+
+    #special() {
+        let benefit = 0;
+        if(SPECIAL.includes(this.date)) {
+            benefit = 1000;
         }
         
         return benefit;
