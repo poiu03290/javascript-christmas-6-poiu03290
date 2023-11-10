@@ -12,14 +12,14 @@ const OutputView = {
 
     listPrint(list, type) {
         if(list.length === 0) {
-            Console.print('없음');
+            return Console.print('없음');
         }
         list.forEach(el => {
             if(type === 'menu') {
                 Console.print(`${el.name} ${el.count}개`);
             }
             if(type === 'benefit') {
-                Console.print(`${el.name}: ${el.benefit.toLocaleString()}원`)
+                Console.print(`${el.name}: -${el.benefit.toLocaleString()}원`)
             }
         })
     },
@@ -28,7 +28,7 @@ const OutputView = {
         if(type === 'price') {
             return Console.print(`${data.toLocaleString()}원`);
         }
-        return Console.print(data);
+        return Console.print(data ?? "없음");
     },
 }
 

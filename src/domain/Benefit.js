@@ -11,7 +11,7 @@ class Benefit {
             return "샴페인 1개"
         }
 
-        return "없음"
+        return undefined;
     }
 
     #modifyObj(name, benefit) {
@@ -20,17 +20,17 @@ class Benefit {
         return temp;
     }
 
-    getBenefitList(orderedList) {
+    getBenefitList(orderedList, event) {
         let list = [];
         const christmas = this.#christmas();
         const weekend = this.#weekend(orderedList);
         const weekday = this.#weekday(orderedList);
         const special = this.#special();
+        const presentation = this.#presentation(event);
 
-        list.push(christmas, weekend, weekday, special);
-        console.log(list);
-        
-        return list;
+        list.push(christmas, weekend, weekday, special, presentation);
+        const benefitList = list.filter(v => v.benefit !== 0);
+        return benefitList;
     }
 
     #christmas() {
@@ -78,6 +78,14 @@ class Benefit {
         }
         const result = this.#modifyObj('특별 할인', benefit);
 
+        return result;
+    }
+
+
+    #presentation(presentation) {
+        const benefit = presentation === undefined ? 0 : 25000;
+
+        const result = this.#modifyObj('증정 이벤트', benefit);
         return result;
     }
 }
