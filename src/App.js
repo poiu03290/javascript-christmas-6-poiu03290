@@ -26,7 +26,7 @@ class App {
     OutputView.singlePrint(presentation, 'string');
 
     OutputView.print("BENEFIT_LIST");
-    const benefitList = benefit.getBenefitList();
+    const benefitList = benefit.getBenefitList(orderedList);
     console.log(benefitList);
   }
 }

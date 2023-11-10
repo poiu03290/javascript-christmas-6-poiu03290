@@ -1,8 +1,7 @@
-import Menu from './Menu.js';
+import { WEEKEND } from '../data/date.js';
 
 class Benefit {
     constructor(date) {
-        this.menu = new Menu();
         this.date = date;
         this.obj = {};
     }
@@ -15,22 +14,32 @@ class Benefit {
         return "없음"
     }
 
-    getBenefitList() {
-        return this.christmas();
+    getBenefitList(orderedList) {
+        let list = [];
+        const christmas = this.#christmas();
+        const weekend = this.#weekend(orderedList);
+        console.log(christmas)
+
+        return list;
     }
 
-    christmas() {
-        let sum = 0;
+    #christmas() {
+        let benefit = 0;
         if(this.date <= 25) {
-            sum += (+this.date - 1) * 100 + 1000;
-        }
-        const christmasBenefit = {
-            ...this.obj,
-            name: '크리스마스 디데이 할인',
-            benefit: sum
+            benefit += (+this.date - 1) * 100 + 1000;
         }
         
-        return christmasBenefit;
+        return benefit;
+    }
+
+    #weekend(orderedList) {
+        let benefit = 0;
+        const filtered = orderedList.filter(menu => menu.type === 'main')
+        if(WEEKEND.includes(this.date)) {
+            benefit = filtered.length * 2023;
+        }
+        
+        return benefit;
     }
 }
 
