@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 
 import { OUTPUT_MESSAGE } from '../data/message.js';
+import { ERROR_MESSAGE } from '../data/message.js';
 
 const OutputView = {
     print(message) {
@@ -33,6 +34,10 @@ const OutputView = {
         }
         return Console.print(data ?? "없음");
     },
+
+    errorPrint(message) {
+        Console.print(ERROR_MESSAGE[message]);
+    }
 }
 
 export default OutputView;

@@ -15,4 +15,8 @@ const OUTPUT_MESSAGE = {
     BADGE: "<12월 이벤트 배지>",
 }
 
-export { INPUT_MESSAGE, OUTPUT_MESSAGE };
+const ERROR_MESSAGE = {
+    DATE: "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.",
+}
+
+export { INPUT_MESSAGE, OUTPUT_MESSAGE, ERROR_MESSAGE };
