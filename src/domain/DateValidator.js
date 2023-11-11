@@ -3,15 +3,15 @@ import OutputView from '../View/OutputView.js';
 
 import { INPUT_MESSAGE } from '../data/message.js';
 
-class Validator {
+class DateValidator {
     constructor() {}
 
-    static async isDateValidate(input) {
+    async isDateValidate(input) {
         let date = input;
         while(true) {
             try {
-                Validator.isCheckNumber(date);
-                Validator.isCheckProperRange(date);
+                DateValidator.isCheckNumber(date);
+                DateValidator.isCheckProperRange(date);
                 break;
             } catch(error) {
                 OutputView.errorPrint(error.message);
@@ -35,4 +35,4 @@ class Validator {
     }
 }
 
-export default Validator;
+export default DateValidator;

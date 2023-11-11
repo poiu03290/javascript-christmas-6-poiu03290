@@ -1,22 +1,12 @@
+import MenuValidator from '../Domain/MenuValidator.js';
+
 import ALL_MENU from '../data/menu.js';
 
 class Menu {
     constructor() {}
 
-    static modifyObj(input) {
-        const obj = {};
-        const splitedMenu = input.split(',');
-
-        splitedMenu.map(menu => {
-            const split = menu.split('-');
-            obj[split[0]] = split[1];
-        });
-
-        return obj;
-    }
-
     getOrderedList(input) {
-        const menuList = Menu.modifyObj(input);
+        const menuList = MenuValidator.modifyObj(input);
         let orderedList = [];
         for(const [orderedMenu, count] of Object.entries(menuList)) {
             const finedMenu = ALL_MENU.find(menu => menu.name === orderedMenu);

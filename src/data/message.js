@@ -17,6 +17,9 @@ const OUTPUT_MESSAGE = {
 
 const ERROR_MESSAGE = {
     DATE: "[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.",
+    MENU: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
+    BEVERAGE: "[ERROR] 음료만 주문하실 수 없습니다.",
+    QUANTITY: "[ERROR] 메뉴는 한 번에 최대 20개까지만 주문할 수 있습니다.",
 }
 
 export { INPUT_MESSAGE, OUTPUT_MESSAGE, ERROR_MESSAGE };
