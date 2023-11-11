@@ -13,7 +13,7 @@ class Menu {
             finedMenu['count'] = +count;
             orderedList.push(finedMenu);
         }
-
+        
         return orderedList;
     }
 
