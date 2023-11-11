@@ -25,7 +25,7 @@ const OutputView = {
     },
 
     singlePrint(data, type) {
-        if(type === 'price') {
+        if(type === 'price' || data === 0) {
             return Console.print(`${data.toLocaleString()}원`);
         }
         if(type === 'benefit') {

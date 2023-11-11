@@ -56,7 +56,7 @@ class EventController {
     benefitList() {
         OutputView.print("BENEFIT_LIST");
         const benefit = new Benefit(this.#date);
-        this.#benefitList = benefit.getBenefitList(this.#orderedList, this.#presentation);
+        this.#benefitList = benefit.getBenefitList(this.#orderedList, this.#presentation, this.#totalPrice);
         OutputView.listPrint(this.#benefitList, 'benefit');
         this.benefitPrice();
     }

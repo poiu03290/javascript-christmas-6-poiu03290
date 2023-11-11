@@ -38,8 +38,11 @@ class Benefit {
         }, 0)
     }
 
-    getBenefitList(orderedList, presentation) {
+    getBenefitList(orderedList, presentation, totalPrice) {
         let list = [];
+        if(totalPrice < 10000) {
+            return list;
+        }
         const christmas = this.#christmas();
         const weekend = this.#weekend(orderedList);
         const weekday = this.#weekday(orderedList);
