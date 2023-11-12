@@ -27,7 +27,7 @@ class Benefit {
         if(10000 <= price && price < 20000) {
             return '트리';
         }
-        if(20000 < price) {
+        if(20000 <= price) {
             return '산타';
         }
     }
