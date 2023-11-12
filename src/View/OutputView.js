@@ -20,7 +20,7 @@ const OutputView = {
                 Console.print(`${el.name} ${el.count}개`);
             }
             if(type === 'benefit') {
-                Console.print(`${el.name}: -${el.benefit.toLocaleString()}원`)
+                Console.print(`${el.name}: -${el.benefit.toLocaleString()}원`);
             }
         })
     },

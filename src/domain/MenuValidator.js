@@ -7,7 +7,7 @@ import { INPUT_MESSAGE } from '../data/message.js';
 import ALL_MENU from '../data/menu.js';
 
 class MenuValidator {
-    constructor() {}
+    constructor() {};
 
     static modifyObj(input) {
         const obj = {};
@@ -84,7 +84,7 @@ class MenuValidator {
         const menu = MenuValidator.modifyObj(input);
         const menuName = Object.keys(menu);
         const filtered = ALL_MENU.map(menu => menu.name);
-        const isHave = menuName.every(menu => filtered.includes(menu))
+        const isHave = menuName.every(menu => filtered.includes(menu));
 
         if(!isHave) {
             throw new Error("MENU");

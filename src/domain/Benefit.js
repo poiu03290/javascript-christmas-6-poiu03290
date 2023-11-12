@@ -30,11 +30,13 @@ class Benefit {
         if(20000 <= price) {
             return '산타';
         }
+
+        return undefined;
     }
 
     getTotalBenefitPrice(benefitList) {
         return benefitList.reduce((acc, cur) => {
-            return acc += cur.benefit
+            return acc += cur.benefit;
         }, 0)
     }
 
