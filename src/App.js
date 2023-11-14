@@ -1,4 +1,4 @@
-import EventController from './Controller/EventController.js';
+import EventController from './controller/EventController';
 
 class App {
   constructor() {

@@ -1,4 +1,4 @@
-import MenuValidator from '../Domain/MenuValidator.js';
+import MenuValidator from './MenuValidator.js';
 
 import ALL_MENU from '../data/menu.js';
 

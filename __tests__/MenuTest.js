@@ -1,4 +1,4 @@
-import Menu from '../src/Domain/Menu.js';
+import Menu from '../src/model/Menu.js';
 
 describe("메뉴 클래스 테스트", () => {
     let menu;

@@ -1,8 +1,8 @@
-import InputView from '../View/InputView.js';
-import OutputView from '../View/OutputView.js';
+import InputView from '../view/InputView.js';
+import OutputView from '../view/OutputView.js';
 
-import Menu from '../Domain/Menu.js';
-import Benefit from '../Domain/Benefit.js';
+import Menu from '../model/Menu.js';
+import Benefit from '../model/Benefit.js';
 
 class EventController {
     #date;

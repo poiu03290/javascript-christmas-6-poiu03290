@@ -1,6 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
-import DateValidator from '../Domain/DateValidator.js';
-import MenuValidator from '../Domain/MenuValidator.js';
+import DateValidator from '../model/DateValidator.js';
+import MenuValidator from '../model/MenuValidator.js';
 
 import { INPUT_MESSAGE } from '../data/message.js';
 

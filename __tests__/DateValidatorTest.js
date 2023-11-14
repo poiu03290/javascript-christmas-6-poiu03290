@@ -1,4 +1,4 @@
-import DateValidator from '../src/Domain/DateValidator.js';
+import DateValidator from '../src/model/DateValidator.js';
 
 describe("날짜 테스트", () => {
     test("입력한 값이 숫자인지 테스트", () => {

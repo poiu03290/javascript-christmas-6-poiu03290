@@ -1,6 +1,6 @@
 import Menu from './Menu.js';
-import InputView from '../View/InputView.js';
-import OutputView from '../View/OutputView.js';
+import InputView from '../view/InputView.js';
+import OutputView from '../view/OutputView.js';
 
 import { INPUT_MESSAGE } from '../data/message.js';
 

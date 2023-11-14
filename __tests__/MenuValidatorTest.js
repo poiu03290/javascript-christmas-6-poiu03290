@@ -1,4 +1,4 @@
-import MenuValidator from '../src/Domain/MenuValidator.js';
+import MenuValidator from '../src/model/MenuValidator.js';
 
 describe("메뉴 테스트", () => {
     test("사용자가 입력한 주문 문자열을 객체로 변환하는지 테스트", () => {
