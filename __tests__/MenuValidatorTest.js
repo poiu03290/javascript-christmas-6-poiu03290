@@ -77,4 +77,10 @@ describe("메뉴 테스트", () => {
                 MenuValidator.isCheckNumber(input)).toThrow(Error);
         });
     });
+
+    test("중복 메뉴 테스트", () => {
+        const input = '초코케이크-1,초코케이크-1';
+        expect(() => 
+        MenuValidator.isCheckDuplicatedMenu(input)).toThrow(Error);
+    })
 });
