@@ -33,15 +33,20 @@ const OutputView = {
 
   printPrice(price, title) {
     Console.print(title);
-    if (title === "<총혜택 금액>") {
-      return Console.print(`-${price.toLocaleString()}원`);
-    }
     Console.print(`${price.toLocaleString()}원`);
   },
 
-  printWhether(benefit, title) {
+  printWhether(value, title) {
     Console.print(title);
-    Console.print(benefit ?? "없음");
+    Console.print(value ?? "없음");
+  },
+
+  printTotalBenefitPrice(price, title) {
+    Console.print(title);
+    if (price === 0) {
+      return Console.print(`${price}원`);
+    }
+    Console.print(`-${price.toLocaleString()}원`);
   },
 };
 

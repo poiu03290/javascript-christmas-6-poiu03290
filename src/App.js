@@ -2,7 +2,7 @@ import EventController from "./controller/EventController.js";
 
 class App {
   async run() {
-    new EventController().requestUserInput();
+    await new EventController().requestUserInput();
   }
 }
 

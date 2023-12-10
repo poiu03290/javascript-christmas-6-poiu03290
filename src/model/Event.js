@@ -69,6 +69,30 @@ class Event {
     return benefitList.reduce((acc, cur) => (acc += Number(cur.amount)), 0);
   }
 
+  getTotalPriceAfterDiscount(totalPrice, totalBenefitPrice) {
+    const presentation = this.isPresentation();
+    if (presentation) {
+      return totalPrice - totalBenefitPrice + 25000;
+    }
+
+    return totalPrice - totalBenefitPrice;
+  }
+
+  getBadge(totalBenefirPrice) {
+    if (totalBenefirPrice < 5000) {
+      return undefined;
+    }
+    if (totalBenefirPrice > 5000 && totalBenefirPrice < 10000) {
+      return "별";
+    }
+    if (totalBenefirPrice > 10000 && totalBenefirPrice < 20000) {
+      return "트리";
+    }
+    if (totalBenefirPrice > 20000) {
+      return "산타";
+    }
+  }
+
   #isCheckUndefined(...rest) {
     const benefitList = [];
     rest.forEach((benefit) => {

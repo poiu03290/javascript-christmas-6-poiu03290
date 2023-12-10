@@ -32,7 +32,16 @@ class EventController {
     OutputView.printList(benefitList, "benefit");
 
     const totalBenefitPrice = this.#event.getTotalBenefitPrice();
-    OutputView.printPrice(totalBenefitPrice, TITLE.TOTAL_DISCOUNT);
+    OutputView.printTotalBenefitPrice(totalBenefitPrice, TITLE.TOTAL_DISCOUNT);
+
+    const totalPriceAfterDiscount = this.#event.getTotalPriceAfterDiscount(
+      totalPrice,
+      totalBenefitPrice
+    );
+    OutputView.printPrice(totalPriceAfterDiscount, TITLE.PRICE_AFTER_DISCOUNT);
+
+    const badge = this.#event.getBadge(totalBenefitPrice);
+    OutputView.printWhether(badge, TITLE.BADGE);
   }
 }
 
