@@ -1,4 +1,4 @@
-const MENU = [
+const ALL_MENU = [
   {
     name: "양송이스프",
     price: 6000,
@@ -61,4 +61,4 @@ const MENU = [
   },
 ];
 
-export default MENU;
+export default ALL_MENU;

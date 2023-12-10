@@ -1,4 +1,4 @@
-import MENU from "../data/menu.js";
+import ALL_MENU from "../data/menu.js";
 import { ERROR_MESSAGE } from "../data/message.js";
 
 const MenuValidate = {
@@ -49,7 +49,7 @@ const MenuValidate = {
 
   isCheckExistedMenu(menuList) {
     menuList.forEach((menu) => {
-      const finedMenu = MENU.find((item) => menu.name === item.name);
+      const finedMenu = ALL_MENU.find((item) => menu.name === item.name);
       if (!finedMenu) {
         throw new Error(ERROR_MESSAGE.MENU);
       }
@@ -59,7 +59,7 @@ const MenuValidate = {
   isCheckOnlyBeverage(menuList) {
     const categories = [];
     menuList.forEach((menu) => {
-      const finedMenu = MENU.find((item) => menu.name === item.name);
+      const finedMenu = ALL_MENU.find((item) => menu.name === item.name);
       categories.push(finedMenu.category);
     });
 

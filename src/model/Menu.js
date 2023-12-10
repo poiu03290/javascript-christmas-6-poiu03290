@@ -1,4 +1,4 @@
-import MENU from "../data/menu.js";
+import ALL_MENU from "../data/menu.js";
 
 class Menu {
   #menu;
