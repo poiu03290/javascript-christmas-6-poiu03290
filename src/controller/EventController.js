@@ -5,7 +5,7 @@ import { MESSAGE } from "../data/message.js";
 
 class EventController {
   #date;
-  #menuList;
+  #menu;
 
   async requestDate() {
     OutputView.printMessage(MESSAGE.START);
@@ -14,10 +14,18 @@ class EventController {
   }
 
   async getMenuList() {
-    this.#menuList = await InputView.readMenu();
+    this.#menu = await InputView.readMenu();
     OutputView.printMessage(MESSAGE.PREVIEW(this.#date));
-    OutputView.printList(this.#menuList, "menu");
+
+    const menuList = this.#menu.getMenuList();
+    OutputView.printList(menuList, "menu");
+    this.handleEventApplication();
   }
+
+  handleEventApplication() {
+    this.#menu.getTotalPrice();
+  }
+  #calculateTotalPrice() {}
 }
 
 export default EventController;

@@ -2,7 +2,7 @@ import { Console } from "@woowacourse/mission-utils";
 
 import DateValidate from "../model/DateValidate.js";
 import MenuValidate from "../model/MenuValidate.js";
-import Event from "../model/Event.js";
+import Menu from "../model/Menu.js";
 import OutputView from "./OutputView.js";
 
 import { MESSAGE } from "../data/message.js";
@@ -23,10 +23,11 @@ const InputView = {
   async readMenu() {
     try {
       const input = await Console.readLineAsync(MESSAGE.MENU);
-      const menuList = new Event().getMenuList(input);
+      const menu = new Menu(input);
+      const menuList = menu.getMenuList();
       MenuValidate.isMenuValidate(menuList, input);
 
-      return menuList;
+      return menu;
     } catch (error) {
       OutputView.printError(error.message);
       return InputView.readMenu();
