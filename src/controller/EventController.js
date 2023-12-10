@@ -5,17 +5,18 @@ import { MESSAGE } from "../data/message.js";
 
 class EventController {
   #date;
-  #menu;
+  #menuList;
 
   async requestDate() {
     OutputView.printMessage(MESSAGE.START);
     this.#date = await InputView.readDate();
-    console.log(this.#date);
     await this.getMenuList();
   }
 
   async getMenuList() {
-    InputView.readMenu();
+    this.#menuList = await InputView.readMenu();
+    OutputView.printMessage(MESSAGE.PREVIEW(this.#date));
+    OutputView.printList(this.#menuList, "menu");
   }
 }
 

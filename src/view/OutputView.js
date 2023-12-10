@@ -1,5 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 
+import { TITLE } from "../data/message.js";
+
 const OutputView = {
   printMessage(message) {
     Console.print(message);
@@ -9,11 +11,14 @@ const OutputView = {
     Console.print(error);
   },
 
-  printMenu() {
-    Console.print("<주문 메뉴>");
-    // ...
+  printList(menuList, type) {
+    if (type === "menu") {
+      Console.print(TITLE.MENU);
+      menuList.forEach((menu) => {
+        Console.print(`${menu.name} ${menu.count}개`);
+      });
+    }
   },
-  // ...
 };
 
 export default OutputView;

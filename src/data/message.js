@@ -11,4 +11,14 @@ const ERROR_MESSAGE = Object.freeze({
   MENU: "[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.",
 });
 
-export { MESSAGE, ERROR_MESSAGE };
+const TITLE = Object.freeze({
+  MENU: "<주문 메뉴>",
+  PRICE_BEFORE_DISCOUNT: "<할인 전 총주문 금액>",
+  PRESENTATION: "<증정 메뉴>",
+  DISCOUNT: "<혜택 내역>",
+  TOTAL_DISCOUNTL: "<총혜택 금액>",
+  PRICE_AFTER_DISCOUNTL: "<할인 후 예상 결제 금액>",
+  BADGE: "<12월 이벤트 배지>",
+});
+
+export { MESSAGE, ERROR_MESSAGE, TITLE };

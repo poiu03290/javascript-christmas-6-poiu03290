@@ -26,7 +26,7 @@ const InputView = {
       const menuList = new Event().getMenuList(input);
       MenuValidate.isMenuValidate(menuList, input);
 
-      return input;
+      return menuList;
     } catch (error) {
       OutputView.printError(error.message);
       return InputView.readMenu();
