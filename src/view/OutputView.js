@@ -19,6 +19,10 @@ const OutputView = {
       });
     }
   },
+
+  printPrice(price) {
+    Console.print(`${price.toLocaleString()}원`);
+  },
 };
 
 export default OutputView;

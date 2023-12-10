@@ -23,9 +23,9 @@ class EventController {
   }
 
   handleEventApplication() {
-    this.#menu.getTotalPrice();
+    const totalPrice = this.#menu.getTotalPrice();
+    OutputView.printPrice(totalPrice);
   }
-  #calculateTotalPrice() {}
 }
 
 export default EventController;

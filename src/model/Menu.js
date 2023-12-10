@@ -30,7 +30,14 @@ class Menu {
 
   getTotalPrice() {
     const menuList = this.getMenuList();
-    console.log(menuList);
+    let totalPrice = 0;
+
+    menuList.forEach((menu) => {
+      const finedMenu = ALL_MENU.find((item) => item.name === menu.name);
+      totalPrice += finedMenu.price * Number(menu.count);
+    });
+
+    return totalPrice;
   }
 }
 
