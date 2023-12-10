@@ -16,8 +16,8 @@ const TITLE = Object.freeze({
   PRICE_BEFORE_DISCOUNT: "<할인 전 총주문 금액>",
   PRESENTATION: "<증정 메뉴>",
   DISCOUNT: "<혜택 내역>",
-  TOTAL_DISCOUNTL: "<총혜택 금액>",
-  PRICE_AFTER_DISCOUNTL: "<할인 후 예상 결제 금액>",
+  TOTAL_DISCOUNT: "<총혜택 금액>",
+  PRICE_AFTER_DISCOUNT: "<할인 후 예상 결제 금액>",
   BADGE: "<12월 이벤트 배지>",
 });
 

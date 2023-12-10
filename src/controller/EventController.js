@@ -1,30 +1,38 @@
 import InputView from "../view/InputView.js";
 import OutputView from "../view/OutputView.js";
 
-import { MESSAGE } from "../data/message.js";
+import Event from "../model/Event.js";
+
+import { MESSAGE, TITLE } from "../data/message.js";
 
 class EventController {
-  #date;
-  #menu;
+  #event;
 
-  async requestDate() {
+  async requestUserInput() {
     OutputView.printMessage(MESSAGE.START);
-    this.#date = await InputView.readDate();
-    await this.getMenuList();
-  }
+    const date = await InputView.readDate();
+    const menu = await InputView.readMenu();
+    OutputView.printMessage(MESSAGE.PREVIEW(date));
 
-  async getMenuList() {
-    this.#menu = await InputView.readMenu();
-    OutputView.printMessage(MESSAGE.PREVIEW(this.#date));
-
-    const menuList = this.#menu.getMenuList();
-    OutputView.printList(menuList, "menu");
+    this.#event = new Event(menu, date);
     this.handleEventApplication();
   }
 
   handleEventApplication() {
-    const totalPrice = this.#menu.getTotalPrice();
-    OutputView.printPrice(totalPrice);
+    const menuList = this.#event.getMenuList();
+    OutputView.printList(menuList, "menu");
+
+    const totalPrice = this.#event.getTotalPrice();
+    OutputView.printPrice(totalPrice, TITLE.PRICE_BEFORE_DISCOUNT);
+
+    const presentation = this.#event.isPresentation(totalPrice);
+    OutputView.printWhether(presentation, TITLE.PRESENTATION);
+
+    const benefitList = this.#event.getBenefitList();
+    OutputView.printList(benefitList, "benefit");
+
+    const totalBenefitPrice = this.#event.getTotalBenefitPrice();
+    OutputView.printPrice(totalBenefitPrice, TITLE.TOTAL_DISCOUNT);
   }
 }
 

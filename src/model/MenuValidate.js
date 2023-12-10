@@ -20,7 +20,7 @@ const MenuValidate = {
 
   isProperQuantity(menuList) {
     const menuTotalQuantity = menuList
-      .map((menu) => menu.count)
+      .map((menu) => menu.amount)
       .reduce((acc, cur) => (acc += Number(cur)), 0);
 
     if (menuTotalQuantity > 20) {
@@ -29,7 +29,7 @@ const MenuValidate = {
   },
 
   isCheckAtLeastQuantity(menuList) {
-    const menuQuantity = menuList.map((menu) => menu.count);
+    const menuQuantity = menuList.map((menu) => menu.amount);
     menuQuantity.forEach((quantity) => {
       if (Number(quantity) < 1) {
         throw new Error(ERROR_MESSAGE.MENU);
